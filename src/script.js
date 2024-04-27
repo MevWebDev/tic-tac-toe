@@ -1,13 +1,10 @@
-const fields = document.querySelectorAll(".field");
-fields.forEach((field, index) => {
+const allFields = document.querySelectorAll(".field");
+allFields.forEach((field, index) => {
   field.addEventListener("click", () => {
-    if (!game.gameOver) {
-      field.innerText = game.turn.marker;
-      game.playTurn(index);
+    if (game.board.getField(index) !== null) {
+      console.log("You can't put it there");
+      return;
     }
-  });
-  field.addEventListener("touchend", (e) => {
-    e.preventDefault(); // Prevent the browser's default behavior
     if (!game.gameOver) {
       field.innerText = game.turn.marker;
       game.playTurn(index);

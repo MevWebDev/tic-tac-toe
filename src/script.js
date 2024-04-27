@@ -7,7 +7,13 @@ allFields.forEach((field, index) => {
       return;
     }
     if (!game.gameOver) {
-      field.innerText = game.turn.marker;
+      const img = document.createElement("img");
+      img.src =
+        game.turn.marker === "X"
+          ? "src/markers/luffy.png"
+          : "src/markers/zoro.png";
+      field.appendChild(img);
+
       game.playTurn(index);
     }
   });

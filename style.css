@@ -1,5 +1,6 @@
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -8,9 +9,8 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  background-image: url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/9388cc56-5149-433e-a16a-fd0b5b591523/d6c1k2x-11f53686-18eb-412a-afa7-ef9af6e4c7a4.jpg/v1/fill/w_1192,h_670,q_70,strp/one_piece_wallpaper_by_drawerofthings_d6c1k2x-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcLzkzODhjYzU2LTUxNDktNDMzZS1hMTZhLWZkMGI1YjU5MTUyM1wvZDZjMWsyeC0xMWY1MzY4Ni0xOGViLTQxMmEtYWZhNy1lZjlhZjZlNGM3YTQuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.C8n8yVRpdnVknwhARQXDJZJE99nlyVGpQ0-_VH5jwME");
+  background-image: url("src/markers/background-2.jpg");
   background-position: bottom;
-  background-size: cover;
   background-repeat: no-repeat;
 }
 body #container {
@@ -53,4 +53,4 @@ body #container #board-grid .field img {
 }
 body #container #board-grid .field:hover {
   background-color: rgba(0, 0, 0, 0.5);
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

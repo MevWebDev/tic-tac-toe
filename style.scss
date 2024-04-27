@@ -9,7 +9,7 @@ body {
   margin: 0;
   padding: 0;
   border: 0;
-  background-image: url("markers/background-2.jpg");
+  background-image: url("img/background-2.jpg");
   background-position: bottom;
   background-repeat: no-repeat;
 
@@ -18,12 +18,10 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    aspect-ratio: 1 / 1;
     width: 800px;
     height: 800px;
-    min-width: 564px;
-    min-height: 564px;
-
+    max-width: 80%;
+    max-height: 80%;
     gap: 1rem;
     #header {
       h3 {

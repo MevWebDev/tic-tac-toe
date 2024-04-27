@@ -8,10 +8,7 @@ allFields.forEach((field, index) => {
     }
     if (!game.gameOver) {
       const img = document.createElement("img");
-      img.src =
-        game.turn.marker === "X"
-          ? "src/markers/luffy.png"
-          : "src/markers/zoro.png";
+      img.src = game.turn.marker === "X" ? "img/luffy.png" : "img/zoro.png";
       field.appendChild(img);
 
       game.playTurn(index);

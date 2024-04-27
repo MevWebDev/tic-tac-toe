@@ -1,3 +1,4 @@
+"use strict";
 const allFields = document.querySelectorAll(".field");
 allFields.forEach((field, index) => {
   field.addEventListener("click", () => {

@@ -197,8 +197,8 @@ class Game {
       modalImage.src = this.turn.icon;
       const sound = document.createElement("audio");
       sound.src = this.turn.laugh;
-      sound.play();
       audioElement.pause();
+      sound.play();
     }
   }
 }

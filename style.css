@@ -11,6 +11,108 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
 }
+body audio {
+  display: none;
+}
+body #modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+body #modal #modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body #modal #modal-content h3 {
+  font-size: 1.5rem;
+  margin: 0;
+  color: black;
+}
+body #modal #modal-content button {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+body #modal #modal-content button:hover {
+  background-color: #d60000;
+}
+body #choose-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+body #choose-modal #choose-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body #choose-modal #choose-modal-content h1 {
+  font-size: 1.5rem;
+  margin: 0 0 1rem 0;
+  color: black;
+}
+body #choose-modal #choose-modal-content #characters-grid {
+  width: 50%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  text-align: center;
+}
+body #choose-modal #choose-modal-content #characters-grid .character {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0;
+}
+body #choose-modal #choose-modal-content #characters-grid .character img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+}
+body #choose-modal #choose-modal-content #characters-grid .character img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+body #choose-modal #choose-modal-content #characters-grid .character p {
+  margin: 0;
+  font-size: 1rem;
+}
 body #container {
   display: flex;
   flex-direction: column;

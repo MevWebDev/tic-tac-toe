@@ -12,6 +12,108 @@ body {
   background-image: url("img/background-2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  audio {
+    display: none;
+  }
+  #modal {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    #modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 500px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h3 {
+        font-size: 1.5rem;
+        margin: 0;
+        color: black;
+      }
+      button {
+        margin-top: 1rem;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #ff0000;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        &:hover {
+          background-color: #d60000;
+        }
+      }
+    }
+  }
+  #choose-modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    #choose-modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      width: 500px;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      h1 {
+        font-size: 1.5rem;
+        margin: 0 0 1rem 0;
+        color: black;
+      }
+      #characters-grid {
+        width: 50%;
+        display: grid;
+        align-items: center;
+        justify-content: center;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        text-align: center;
+        .character {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 0;
+          img {
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50%;
+          }
+          img:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+          }
+          p {
+            margin: 0;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
 
   #container {
     display: flex;

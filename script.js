@@ -1,4 +1,6 @@
 "use strict";
+let audioElement = document.querySelector("audio");
+
 const allFields = document.querySelectorAll(".field");
 allFields.forEach((field, index) => {
   field.addEventListener("click", () => {
@@ -8,22 +10,48 @@ allFields.forEach((field, index) => {
     }
     if (!game.gameOver) {
       const img = document.createElement("img");
-      img.src = game.turn.marker === "X" ? "img/luffy.png" : "img/zoro.png";
+      img.src =
+        game.turn.marker === "X" ? game.player1.icon : game.player2.icon;
       field.appendChild(img);
 
       game.playTurn(index);
     }
   });
 });
-const restartButton = document.getElementById("restart-button");
+const modal = document.getElementById("modal");
+
+const modalImage = document.getElementById("modal-img");
+const restartButton = document.getElementById("modal-button");
 restartButton.addEventListener("click", () => {
   game.board.clearBoard();
   game = new Game();
+  modal.style.display = "none";
+  chooseModal.style.display = "flex";
+  allCharacters.forEach((character) => {
+    let imgElement = character.querySelector("img");
+    imgElement.style.display = "block";
+  });
 });
+
+const chooseModal = document.getElementById("choose-modal");
+const chooseModalTitle = document.getElementById("choose-modal-title");
+
+const allCharacters = document.querySelectorAll(".character");
+allCharacters.forEach((character) => {
+  character.addEventListener("click", () => {
+    let imgElement = character.querySelector("img");
+    console.log(imgElement, imgElement.src);
+    game.choosePlayers(character.textContent, imgElement.src);
+    imgElement.style.display = "none";
+    chooseModalTitle.textContent = "Player 2";
+  });
+});
+
 class GameBoard {
   constructor() {
     this.board = new Array(9).fill(null);
   }
+
   addMarker(marker, index) {
     if (this.board[index] === null) {
       this.board[index] = marker;
@@ -44,11 +72,22 @@ class GameBoard {
 class Game {
   constructor() {
     this.board = new GameBoard();
-    this.player1 = new Player("X");
-    this.player2 = new Player("O");
+    this.player1 = null;
+    this.player2 = null;
     this.turn = this.player1;
     this.gameOver = false;
   }
+  choosePlayers(player, icon) {
+    if (this.player1 === null) {
+      this.player1 = new Player(player, "X", icon);
+      this.turn = this.player1;
+    } else {
+      this.player2 = new Player(player, "O", icon);
+      chooseModal.style.display = "none";
+      audioElement.play();
+    }
+  }
+
   playTurn(index) {
     if (this.gameOver) {
       console.log("The game has ended.");
@@ -119,35 +158,32 @@ class Game {
       checkForColumns.call(this) ||
       checkForDiagonals.call(this)
     ) {
-      this.endGame(`The winner is ${this.turn.marker}!`);
+      this.endGame(this.turn.nick);
+
+      modal.style.display = "flex";
     } else {
       if (this.board.board.every((field) => field !== null)) {
         this.endGame("It's a draw!");
+        modal.style.display = "flex";
       }
     }
   }
   endGame(status) {
     this.gameOver = true;
     console.log(status);
+    if (status) {
+      modalImage.src = this.turn.icon;
+    }
   }
 }
 class Player {
-  constructor(marker) {
+  constructor(nick, marker, icon) {
+    this.nick = nick;
     this.marker = marker;
+    this.icon = icon;
   }
 }
 let game = new Game();
-
-// game.playTurn(0);
-// game.playTurn(3);
-// game.playTurn(2);
-// game.playTurn(4);
-// game.playTurn(6);
-// game.playTurn(1);
-// game.playTurn(7);
-// game.playTurn(8);
-// game.playTurn(5);
-// console.log(game);
 
 const gameBoardGrid = document.getElementById("board-grid");
 

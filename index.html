@@ -7,6 +7,35 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <audio loop>
+      <source id="audio" src="img/background-music.mp3" type="audio/mpeg" />
+    </audio>
+    <div id="modal">
+      <div id="modal-content">
+        <h1 id="modal-title">The Winner is</h1>
+        <img id="modal-img" src="" alt="" />
+        <button id="modal-button">New Game</button>
+      </div>
+    </div>
+    <div id="choose-modal">
+      <div id="choose-modal-content">
+        <h1 id="choose-modal-title">Player 1</h1>
+        <h1>Choose your character</h1>
+        <div id="characters-grid">
+          <div class="character"><img src="img/luffy.png" alt="" />Luffy</div>
+          <div class="character"><img src="img/zoro.png" alt="" />Zoro</div>
+          <div class="character"><img src="img/nami.png" alt="" />Nami</div>
+          <div class="character"><img src="img/usopp.png" alt="" />Usopp</div>
+          <div class="character"><img src="img/sanji.png" alt="" />Sanji</div>
+          <div class="character">
+            <img src="img/chopper.png" alt="" />Chopper
+          </div>
+          <div class="character"><img src="img/robin.png" alt="" />Robin</div>
+          <div class="character"><img src="img/franky.png" alt="" />Franky</div>
+          <div class="character"><img src="img/brook.png" alt="" />Brook</div>
+        </div>
+      </div>
+    </div>
     <div id="container">
       <div id="header"><img src="img/logo.png" alt="" /></div>
       <div id="board-grid">
@@ -20,7 +49,6 @@
         <div class="field"></div>
         <div class="field"></div>
       </div>
-      <button id="restart-button">New Game</button>
     </div>
 
     <script src="script.js"></script>

@@ -26,6 +26,12 @@ body #container {
     justify-content: flex-start;
   }
 }
+@media screen and (max-width: 800px) {
+  body #container {
+    margin-top: 40%;
+    justify-content: flex-start;
+  }
+}
 body #container #header {
   display: flex;
   align-items: center;

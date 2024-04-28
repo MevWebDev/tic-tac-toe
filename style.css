@@ -38,6 +38,22 @@ body #modal #modal-content {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 400px) {
+  body #modal #modal-content {
+    width: 312.5px;
+    height: 250px;
+    align-self: flex-start;
+    margin-top: 50%;
+  }
+}
+@media screen and (max-width: 400px) {
+  body #modal #modal-content {
+    width: 312.5px;
+    height: 250px;
+    align-self: flex-start;
+    margin-top: 50%;
+  }
+}
 body #modal #modal-content h3 {
   font-size: 1.5rem;
   margin: 0;
@@ -80,6 +96,14 @@ body #choose-modal #choose-modal-content {
   align-items: center;
   justify-content: center;
 }
+@media screen and (max-width: 400px) {
+  body #choose-modal #choose-modal-content {
+    width: 70%;
+    height: 250px;
+    align-self: flex-start;
+    margin-top: 50%;
+  }
+}
 body #choose-modal #choose-modal-content h1 {
   font-size: 1.5rem;
   margin: 0 0 1rem 0;
@@ -103,7 +127,12 @@ body #choose-modal #choose-modal-content #characters-grid .character {
 body #choose-modal #choose-modal-content #characters-grid .character img {
   width: 6rem;
   height: 6rem;
-  border-radius: 50%;
+}
+@media screen and (max-width: 400px) {
+  body #choose-modal #choose-modal-content #characters-grid .character img {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 body #choose-modal #choose-modal-content #characters-grid .character img:hover {
   cursor: pointer;

@@ -28,6 +28,12 @@ body {
     overflow: auto;
     background-color: rgba($color: #000000, $alpha: 0.5);
     #modal-content {
+      @media screen and (max-width: 400px) {
+        width: 312.5px;
+        height: 250px;
+        align-self: flex-start;
+        margin-top: 50%;
+      }
       background-color: white;
       padding: 20px;
       border-radius: 10px;
@@ -37,6 +43,12 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      @media screen and (max-width: 400px) {
+        width: 312.5px;
+        height: 250px;
+        align-self: flex-start;
+        margin-top: 50%;
+      }
       h3 {
         font-size: 1.5rem;
         margin: 0;
@@ -79,6 +91,12 @@ body {
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      @media screen and (max-width: 400px) {
+        width: 70%;
+        height: 250px;
+        align-self: flex-start;
+        margin-top: 50%;
+      }
       h1 {
         font-size: 1.5rem;
         margin: 0 0 1rem 0;
@@ -98,9 +116,12 @@ body {
           justify-content: center;
           font-size: 0;
           img {
+            @media screen and (max-width: 400px) {
+              width: 4rem;
+              height: 4rem;
+            }
             width: 6rem;
             height: 6rem;
-            border-radius: 50%;
           }
           img:hover {
             cursor: pointer;

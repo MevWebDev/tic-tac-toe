@@ -20,6 +20,12 @@ body #container {
   height: 100%;
   gap: 1rem;
 }
+@media screen and (max-width: 400px) {
+  body #container {
+    margin-top: 40%;
+    justify-content: flex-start;
+  }
+}
 body #container #header {
   display: flex;
   align-items: center;

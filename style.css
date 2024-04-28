@@ -16,11 +16,24 @@ body #container {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 800px;
-  height: 800px;
-  max-width: 80%;
-  max-height: 80%;
+  width: 80%;
+  height: 100%;
   gap: 1rem;
+}
+body #container #header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media screen and (max-width: 800px) {
+  body #container #header {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 400px) {
+  body #container #header {
+    width: 250px;
+  }
 }
 body #container #header h3 {
   font-size: 1.5rem;
@@ -29,11 +42,23 @@ body #container #header h3 {
 }
 body #container #board-grid {
   border: 2px solid white;
-  width: 70%;
-  height: 70%;
+  width: 600px;
+  height: 600px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+}
+@media screen and (max-width: 800px) {
+  body #container #board-grid {
+    width: 400px;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 400px) {
+  body #container #board-grid {
+    width: 250px;
+    height: 250px;
+  }
 }
 body #container #board-grid .field {
   box-sizing: border-box;

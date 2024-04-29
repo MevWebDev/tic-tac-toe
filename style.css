@@ -64,6 +64,10 @@ body #modal #modal-content button {
 body #modal #modal-content button:hover {
   background-color: #d60000;
 }
+body #modal #modal-content img {
+  max-width: 400px;
+  margin-bottom: 1rem;
+}
 body #choose-modal {
   display: flex;
   align-items: center;

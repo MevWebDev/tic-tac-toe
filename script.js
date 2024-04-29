@@ -22,6 +22,7 @@ const laughs = [
   brookLaugh,
 ];
 
+const modalTitle = document.getElementById("modal-title");
 const allFields = document.querySelectorAll(".field");
 allFields.forEach((field, index) => {
   field.addEventListener("click", () => {
@@ -185,20 +186,25 @@ class Game {
       modal.style.display = "flex";
     } else {
       if (this.board.board.every((field) => field !== null)) {
-        this.endGame("It's a draw!");
         modal.style.display = "flex";
+        this.endGame("draw");
       }
     }
   }
   endGame(status) {
     this.gameOver = true;
     console.log(status);
-    if (status) {
+    if (status !== "draw") {
       modalImage.src = this.turn.icon;
+      modalTitle.textContent = "The winner is";
       const sound = document.createElement("audio");
       sound.src = this.turn.laugh;
       audioElement.pause();
       sound.play();
+    } else {
+      audioElement.pause();
+      modalImage.src = "img/draw.png";
+      modalTitle.textContent = "It's a draw!";
     }
   }
 }

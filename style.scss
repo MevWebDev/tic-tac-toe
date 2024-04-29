@@ -61,7 +61,12 @@ body {
           background-color: #d60000;
         }
       }
+
       img {
+        @media screen and (max-width: 400px) {
+          width: 4rem;
+          height: 4rem;
+        }
         max-width: 400px;
         margin-bottom: 1rem;
       }

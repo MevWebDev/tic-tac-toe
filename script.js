@@ -1,33 +1,9 @@
 "use strict";
-let audioElement = document.querySelector("audio");
-
-const luffyLaugh = "img/luffy-laugh.mp3";
-const zoroLaugh = "img/zoro-laugh.mp3";
-const sanjiLaugh = "img/sanji-laugh.mp3";
-const namiLaugh = "img/nami-laugh.mp3";
-const usoppLaugh = "img/usopp-laugh.mp3";
-const chopperLaugh = "img/chopper-laugh.mp3";
-const robinLaugh = "img/robin-laugh.mp3";
-const frankyLaugh = "img/franky-laugh.mp3";
-const brookLaugh = "img/brook-laugh.mp3";
-const laughs = [
-  luffyLaugh,
-  zoroLaugh,
-  namiLaugh,
-  usoppLaugh,
-  sanjiLaugh,
-  chopperLaugh,
-  robinLaugh,
-  frankyLaugh,
-  brookLaugh,
-];
-
 const modalTitle = document.getElementById("modal-title");
 const allFields = document.querySelectorAll(".field");
 allFields.forEach((field, index) => {
   field.addEventListener("click", () => {
     if (game.board.getField(index) !== null) {
-      console.log("You can't put it there");
       return;
     }
     if (!game.gameOver) {
@@ -61,9 +37,9 @@ const chooseModalTitle = document.getElementById("choose-modal-title");
 const allCharacters = document.querySelectorAll(".character");
 allCharacters.forEach((character, index) => {
   character.addEventListener("click", () => {
-    const laugh = laughs[index];
+    const laugh = game.laughs[index];
     let imgElement = character.querySelector("img");
-    console.log(imgElement, imgElement.src);
+
     game.choosePlayers(character.textContent, imgElement.src, laugh);
     imgElement.style.display = "none";
     chooseModalTitle.textContent = "Player 2";
@@ -80,7 +56,6 @@ class GameBoard {
       this.board[index] = marker;
       return true;
     } else {
-      console.log("You can't put it there");
       return false;
     }
   }
@@ -99,6 +74,18 @@ class Game {
     this.player2 = null;
     this.turn = this.player1;
     this.gameOver = false;
+    this.audioElement = document.querySelector("audio");
+    this.laughs = [
+      "img/luffy-laugh.mp3",
+      "img/zoro-laugh.mp3",
+      "img/nami-laugh.mp3",
+      "img/usopp-laugh.mp3",
+      "img/sanji-laugh.mp3",
+      "img/chopper-laugh.mp3",
+      "img/robin-laugh.mp3",
+      "img/franky-laugh.mp3",
+      "img/brook-laugh.mp3",
+    ];
   }
   choosePlayers(player, icon, laugh) {
     if (this.player1 === null) {
@@ -107,17 +94,15 @@ class Game {
     } else {
       this.player2 = new Player(player, "O", icon, laugh);
       chooseModal.style.display = "none";
-      audioElement.play();
+      this.audioElement.play();
     }
   }
 
   playTurn(index) {
     if (this.gameOver) {
-      console.log("The game has ended.");
       return;
     }
     if (this.board.addMarker(this.turn.marker, index)) {
-      console.log(this.board.board);
       if (this.checkGame()) {
         this.endGame();
       } else {
@@ -193,19 +178,17 @@ class Game {
   }
   endGame(status) {
     this.gameOver = true;
-    console.log(status);
     if (status !== "draw") {
       modalImage.src = this.turn.icon;
       modalTitle.textContent = "The winner is";
       const sound = document.createElement("audio");
       sound.src = this.turn.laugh;
-      audioElement.pause();
       sound.play();
     } else {
-      audioElement.pause();
       modalImage.src = "img/draw.png";
       modalTitle.textContent = "It's a draw!";
     }
+    this.audioElement.pause();
   }
 }
 class Player {
@@ -219,5 +202,3 @@ class Player {
 let game = new Game();
 
 const gameBoardGrid = document.getElementById("board-grid");
-
-console.log(allFields);

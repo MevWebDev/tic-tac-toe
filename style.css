@@ -68,6 +68,12 @@ body #modal #modal-content img {
   max-width: 400px;
   margin-bottom: 1rem;
 }
+@media screen and (max-width: 400px) {
+  body #modal #modal-content img {
+    width: 4rem;
+    height: 4rem;
+  }
+}
 body #choose-modal {
   display: flex;
   align-items: center;

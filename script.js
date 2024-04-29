@@ -186,6 +186,8 @@ class Game {
       sound.play();
     } else {
       modalImage.src = "img/draw.png";
+      modalImage.style.width = "250px";
+      modalImage.style.height = "175px";
       modalTitle.textContent = "It's a draw!";
     }
     this.audioElement.pause();
